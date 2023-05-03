@@ -6,11 +6,17 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/03 10:58:19 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:39:34 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+void	errormessage()
+{
+	write(2, "Error\n", 7);
+	exit(0);
+}
 
 int	errorcheck(int argc, char **argv)
 {
@@ -24,11 +30,17 @@ int	errorcheck(int argc, char **argv)
 		write(1, *argv, 17);
 		exit (0);
 	}
-	while(argc)
-		ft_isalnum(argv[i][j]);
+	while (argv[i])
+	{
+		while(argv[i][j] >= 48 && argv[i][j] <= 57)
+			j++;
+		i++;
+	}
+	if (argv[i][j])
+		errormessage();
 }
 
-int	main(int argc,, char **argv)
+int	main(int argc, char **argv)
 {
 	int i;
 	int	*array;
