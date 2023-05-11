@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/11 13:47:46 by nvan-den         ###   ########.fr       */
+/*   Created: 2023/05/11 12:09:57 by nvan-den          #+#    #+#             */
+/*   Updated: 2023/05/11 14:12:57 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 
-void	errormessage()
+
+int	*sort_small_stack()
 {
-	write(2, "Error\n", 7);
-	exit(0);
+
+
 }
 
-
-
-int	main(int argc, char **argv)
+int	*sort_big_stack()
 {
-	int i;
-	int	*array;
-
-	i = 1;
-	array = malloc(sizeof(int*) * (argc));
-	while (i < argc)
-		array[i - 1] = ft_atoi(argv[i++]);
-	array[i - 1] = NULL;
-
-	return (0);
+	// radix sort
 }
