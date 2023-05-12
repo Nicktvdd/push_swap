@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_parse.c                                  :+:      :+:    :+:   */
+/*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/11 15:58:34 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:20:27 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,27 +68,14 @@ void	is_duplicate(int argc, char **argv)
 	}
 }
 
-void	is_
+//check if there is whitespace in first argument, then only accept if
+//it's the only argument
+// hmm what about whitespaces for isdigit
 
-int	is_integer()
+// and other way around. whitespaces can appear ANYWHERE DUM DUM DUM
+
+void	is_consistent(int argc, char**argv)
 {
-	// could use modofied atoi here where you check if the long is
-	// < INT_MAX || > INT_MIN
-	// BUT WHAT IF THE RESULT IS 0 BECAUSE INPUT IS 0?
-	// -> THEN WE EXIT() IF THERE IS AN ERROR
-}
-
-int	parse(int *a)
-{
-	//put numbers in the stack A if no errors are detected
-
-	//check if the numbers in A are sorted. If so, end the program, call is_a_sorted()
-
-	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
-
 	
 	
 }
-
-//after parsing and converting to int, use itoa and the strncmp to compare 
-//if it's the same (not a long, or if error happened)
