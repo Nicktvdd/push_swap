@@ -6,9 +6,20 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 12:26:50 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:23:26 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	*sort_small_stack()
+{
+	if 
+
+}
+
+int	*sort_big_stack()
+{
+	// radix sort
+}
 
 void	sorting_3(int *a_stack)
 {

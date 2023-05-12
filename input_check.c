@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 15:11:23 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:20:33 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	is_valid_input(int argc, char **argv)
 		while (isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
 		{
 			if (argv[i][j] == ' ')
-				whitespace = 1;
+				whitespace++;
 			if (whitespace > 1 && argc > 2)
 				errormessage();
 			j++;
@@ -77,9 +77,3 @@ void	is_duplicate(int argc, char **argv)
 		i++;
 	}
 }
-
-//check if there is whitespace in first argument, then only accept if
-//it's the only argument
-// hmm what about whitespaces for isdigit
-
-// and other way around. whitespaces can appear ANYWHERE DUM DUM DUM
