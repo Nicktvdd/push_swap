@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 14:20:27 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:11:23 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,30 @@ void	is_sorted(int *a_stack)
 			errormessage();
 	}
 }
-
+//checks for enough inputs
+//if everything is a digit
+//if there is whitespace in one of the arguments, it only accepts one argument
 void	is_valid_input(int argc, char **argv)
 {
-	int	flag;
+	int	whitespace;
 	int	i;
 	int	j;
 	
-	flag = 0;
+	whitespace = 0;
+	i = 0;
+	j = 0;
 	if (argc < 2)
 		exit (0);
 	while (argv[i])
 	{
-		if (isdigit(argv[i][j]) || argv[i][j] == '-')
+		while (isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
+		{
+			if (argv[i][j] == ' ')
+				whitespace = 1;
+			if (whitespace > 1 && argc > 2)
+				errormessage();
 			j++;
+		}
 		i++;
 	}
 	if (argv[i][j])
@@ -73,9 +83,3 @@ void	is_duplicate(int argc, char **argv)
 // hmm what about whitespaces for isdigit
 
 // and other way around. whitespaces can appear ANYWHERE DUM DUM DUM
-
-void	is_consistent(int argc, char**argv)
-{
-	
-	
-}
