@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 13:28:15 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:56:03 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void	push(stack *a, int value)
+void	push(stack *s, int value)
 {
 	if (s->top == STACK_SIZE - 1)
 	{

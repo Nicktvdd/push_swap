@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 13:26:16 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:55:54 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	rb(stack *b)
 	int	temp;
 
 	i = b->top;
-	temp = b->items[a->top];
+	temp = b->items[b->top];
 	while (i > 0)
 	{
 		b->items[i] = b->items[i - 1];
