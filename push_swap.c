@@ -6,11 +6,12 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 12:26:54 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:43:06 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "./header.h"
 
 //there's different ways of storing the integers. Array, where we use a struct 
 //to locate where they are on the map
@@ -20,6 +21,26 @@ void	errormessage()
 {
 	write(2, "Error\n", 7);
 	exit(0);
+}
+
+void	sort_stack(stack *a, stack *b)
+{
+	int	value;
+
+	while (!is_empty(a))
+	{
+		value = pop(a);
+		if (is_empty(b) || peek(b) >= value)
+			push(b, value);
+		else
+		{
+			while (!isempty(b) && peek(b) < value)
+				pa(a, b);
+			push(b, value);
+		}
+	}
+	while (!is_empty(b))
+		pa(a, b);
 }
 
 int	main(int argc, char **argv)
