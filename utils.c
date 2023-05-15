@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 13:56:20 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:57:20 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	peek(stack *s)
 
 int	is_empty(stack *s)
 {
-	return s->top == -1
+	return s->top == -1;
 }
 
 //debugging purposeses only

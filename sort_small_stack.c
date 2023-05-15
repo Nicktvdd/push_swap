@@ -6,9 +6,11 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 15:32:58 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:23:57 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "./header.h"
 
 int	*sort_small_stack(int stack_size, int *a_stack)
 {
@@ -16,11 +18,6 @@ int	*sort_small_stack(int stack_size, int *a_stack)
 		sort_3(a_stack);
 	if (stack_size == 5)
 		sort_5(a_stack);
-}
-
-int	*sort_big_stack()
-{
-	// radix sort
 }
 
 void	sort_3(int *a_stack)
