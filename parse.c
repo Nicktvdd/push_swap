@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 14:14:02 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:04:03 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 	// < INT_MAX || > INT_MIN
 	// BUT WHAT IF THE RESULT IS 0 BECAUSE INPUT IS 0?
 	// -> THEN WE EXIT() IF THERE IS AN ERROR
+#include "./header.h"
 
 int	ft_overflow(int min)
 {
@@ -34,7 +35,7 @@ void	check_long(int min, long res)
 			errormessage();
 }
 
-int	ft_atoi(const char *str)
+int	ft_atol(const char *str)
 {
 	int		i;
 	long	res;
@@ -64,14 +65,28 @@ int	ft_atoi(const char *str)
 	return ((int)res * min);
 }
 
-int	parse(int *a)
+int	parse(int argc, char** argv)
 {
 	//put numbers in the stack A if no errors are detected
 
 	//check if the numbers in A are sorted. If so, end the program, call is_a_sorted()
 
-	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
+	int		i;
+	int		num;
+	stack 	a_stack;
+	stack	b_stack;
+	
+	i = 0;
 
+	while (i < argc)
+	{
+		num = ft_atol(argv[i]);
+		push(&a_stack, num);
+	}
+
+	b_stack.top = NULL;
+	
+	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
 	
 	
 }
