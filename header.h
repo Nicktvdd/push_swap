@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 13:54:39 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:12:55 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void 	rra(stack *a_stack);
 void 	rrb(stack *b_stack);
 void 	rrr(stack *a_stack, stack *b_stack);
 stack	*parse(int argc, char** argv);
-void	sort_big_stack(stack *a, stack *b);
+void	sort_big_stack(stack *a);
 stack	*sort_small_stack(int argc, stack *a_stack, stack *b_stack);
 void	push(stack *s, int value);
 int		pop(stack *s);

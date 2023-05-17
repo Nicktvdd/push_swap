@@ -6,27 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/16 13:42:14 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:14:38 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
 // implementation of radix	
-
-void	sort_big_stack(stack *a, stack *b)
-{
-    stack buckets[10];
-    int max_value;
-	int	digit;
-
-	max_value = find_max_value(a);
-	digit = 1;
-	memset(buckets, 0, sizeof(buckets));
-    distribute_elements(a, buckets);
-    sort_by_digit(buckets, digit, max_value);
-    move_elements_to_a(a, buckets);
-}
 
 int	find_max_value(stack *a)
 {
@@ -90,4 +76,18 @@ void	move_elements_to_a(stack *a, stack *buckets)
 		else
             i++;
     }
+}
+
+void	sort_big_stack(stack *a)
+{
+    stack buckets[10];
+    int max_value;
+	int	digit;
+
+	max_value = find_max_value(a);
+	digit = 1;
+	memset(buckets, 0, sizeof(buckets));
+    distribute_elements(a, buckets);
+    sort_by_digit(buckets, digit, max_value);
+    move_elements_to_a(a, buckets);
 }

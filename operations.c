@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 10:35:55 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:59:56 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	rra(stack *a_stack)
 	int	temp;
 	
 	i = 0;
+	temp = a_stack->items[0];
 	while (i < a_stack->top)
 	{
 		a_stack->items[i] = a_stack->items[i + 1];
@@ -116,6 +117,7 @@ void	rrb(stack *b_stack)
 	int	temp;
 	
 	i = 0;
+	temp = b_stack->items[0];
 	while (i < b_stack->top)
 	{
 		b_stack->items[i] = b_stack->items[i + 1];

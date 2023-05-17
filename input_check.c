@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 13:44:10 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:56:21 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	is_sorted(stack *a_stack)
 		i++;
 	}
 	errormessage();
+	return (0);
 }
 //checks for enough inputs
 //if everything is a digit
@@ -41,7 +42,7 @@ void	is_valid_input(int argc, char **argv)
 		exit (0);
 	while (argv[i])
 	{
-		while (isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
+		while (ft_isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
 		{
 			if (argv[i][j] == ' ')
 				whitespace++;

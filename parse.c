@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/16 13:47:29 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:09:49 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	ft_atol(const char *str)
 	return ((int)res * min);
 }
 
-stack	split_args(stack *a_stack, char** argv)
+stack	*split_args(stack *a_stack, char** argv)
 {
 	int		i;
-	char	*buf;
+	char	**buf;
 	int		num;
 
 	i = 0;
@@ -76,10 +76,11 @@ stack	split_args(stack *a_stack, char** argv)
 	while (buf[i])
 	{
 		num = ft_atol(argv[i]);
-		push(&a_stack, num);
+		push(a_stack, num);
 		free(buf[i]);
 	}
 	free(buf);
+	return (a_stack);
 }
 stack*	parse(int argc, char** argv)
 {
@@ -91,6 +92,7 @@ stack*	parse(int argc, char** argv)
 	stack 	*a_stack;
 	
 	i = 0;
+	a_stack = NULL;
 	if (argc == 2)
 		split_args(a_stack, argv);
 	else

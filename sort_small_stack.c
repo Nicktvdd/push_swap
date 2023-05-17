@@ -6,20 +6,11 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 10:38:46 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:11:08 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
-
-stack	*sort_small_stack(int argc, stack *a_stack, stack *b_stack)
-{
-	if (argc == 3)
-		sort_3(a_stack);
-	if (argc == 5)
-		sort_5(a_stack, b_stack);
-	return (a_stack);
-}
 
 void	sort_3(int *a_stack)
 {
@@ -69,4 +60,13 @@ void	sort_5(int *a_stack, int *b_stack)
 	while (!is_empty(b_stack))
 		pa(a_stack, b_stack);
 	
+}
+
+stack	*sort_small_stack(int argc, stack *a_stack, stack *b_stack)
+{
+	if (argc == 3)
+		sort_3(a_stack);
+	if (argc == 5)
+		sort_5(a_stack, b_stack);
+	return (a_stack);
 }
