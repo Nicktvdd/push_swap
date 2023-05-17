@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 14:14:38 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:19:17 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	distribute_elements(stack *a, stack *buckets)
     }
 }
 
-void	sort_by_digit(stack *buckets, int *digit, int max_value)
+void	sort_by_digit(stack *buckets, int digit, int max_value)
 {
-    while (max_value / (*digit) > 0)
+    while (max_value / (digit) > 0)
 	{
         int i;
 		
@@ -55,12 +55,12 @@ void	sort_by_digit(stack *buckets, int *digit, int max_value)
             if (!is_empty(&buckets[i]))
 			{
                 int value = pop(&buckets[i]);
-                push(&buckets[(value / (*digit)) % 10], value);
+                push(&buckets[(value / (digit)) % 10], value);
             }
 			else
                 i++;
         }
-        (*digit) *= 10;
+        (digit) *= 10;
     }
 }
 
