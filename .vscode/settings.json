@@ -2,6 +2,8 @@
 	"files.associations": {
 		"header.h": "c",
 		"queue": "c",
-		"stack": "c"
+		"stack": "c",
+		"algorithm": "c",
+		"random": "c"
 	}
 }

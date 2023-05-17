@@ -6,126 +6,126 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 13:55:54 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:35:55 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void	sa(stack *a)
+void	sa(stack *a_stack)
 {
-	if (a->top <1) 
+	if (a_stack->top <1) 
 		return;
 	int	temp;
 
-	temp = a->items[a->top];
-	a->items[a->top] = a->items[a->top];
-	a->items[a->top - 1] = temp;
+	temp = a_stack->items[a_stack->top];
+	a_stack->items[a_stack->top] = a_stack->items[a_stack->top];
+	a_stack->items[a_stack->top - 1] = temp;
 }
 
-void	sb(stack *b)
+void	sb(stack *b_stack)
 {
-	if (b->top <1) 
+	if (b_stack->top <1) 
 		return;
 	int	temp;
 	
-	temp = b->items[b->top];
-	b->items[b->top] = b->items[b->top];
-	b->items[b->top - 1] = temp;
+	temp = b_stack->items[b_stack->top];
+	b_stack->items[b_stack->top] = b_stack->items[b_stack->top];
+	b_stack->items[b_stack->top - 1] = temp;
 }
 
-void	ss(stack *a, stack *b)
+void	ss(stack *a_stack, stack *b_stack)
 {
-	sa(a);
-	sb(b);
+	sa(a_stack);
+	sb(b_stack);
 }
 
-void	pa(stack *a, stack *b)
+void	pa(stack *a_stack, stack *b_stack)
 {
-	if (is_empty(b)) 
+	if (is_empty(b_stack)) 
 		return;
-	push(a, pop(b));
+	push(a_stack, pop(b_stack));
 }
 
-void	pb(stack *a, stack *b)
+void	pb(stack *a_stack, stack *b_stack)
 {
-	if (is_empty(a)) 
+	if (is_empty(a_stack)) 
 		return;
-	push(b, pop(a));
+	push(b_stack, pop(a_stack));
 }
 
-void	ra(stack *a)
+void	ra(stack *a_stack)
 {
-	if (a->top < 1) return;
+	if (a_stack->top < 1) return;
 	int	i;
 	int	temp;
 
-	i = a->top;
-	temp = a->items[a->top];
+	i = a_stack->top;
+	temp = a_stack->items[a_stack->top];
 	while (i > 0)
 	{
-		a->items[i] = a->items[i - 1];
+		a_stack->items[i] = a_stack->items[i - 1];
 		i--;
 	}
-	a->items[0] = temp;
+	a_stack->items[0] = temp;
 }
 
-void	rb(stack *b)
+void	rb(stack *b_stack)
 {
-	if (b->top < 1) return;
+	if (b_stack->top < 1) return;
 	int	i;
 	int	temp;
 
-	i = b->top;
-	temp = b->items[b->top];
+	i = b_stack->top;
+	temp = b_stack->items[b_stack->top];
 	while (i > 0)
 	{
-		b->items[i] = b->items[i - 1];
+		b_stack->items[i] = b_stack->items[i - 1];
 		i--;
 	}
-	b->items[0] = temp;
+	b_stack->items[0] = temp;
 }
 
-void	rr(stack *a, stack *b)
+void	rr(stack *a_stack, stack *b_stack)
 {
-	ra(a);
-	rb(b);
+	ra(a_stack);
+	rb(b_stack);
 }
 
-void	rra(stack *a)
+void	rra(stack *a_stack)
 {
-	if (a->top < 1)
+	if (a_stack->top < 1)
 		return;
 	int	i;
 	int	temp;
 	
 	i = 0;
-	while (i < a->top)
+	while (i < a_stack->top)
 	{
-		a->items[i] = a->items[i + 1];
+		a_stack->items[i] = a_stack->items[i + 1];
 		i++;
 	}
-	a->items[a->top] = temp;
+	a_stack->items[a_stack->top] = temp;
 }
 
-void	rrb(stack *b)
+void	rrb(stack *b_stack)
 {
-	if (b->top < 1)
+	if (b_stack->top < 1)
 		return;
 	int	i;
 	int	temp;
 	
 	i = 0;
-	while (i < b->top)
+	while (i < b_stack->top)
 	{
-		b->items[i] = b->items[i + 1];
+		b_stack->items[i] = b_stack->items[i + 1];
 		i++;
 	}
-	b->items[b->top] = temp;
+	b_stack->items[b_stack->top] = temp;
 }
 
-void	rrr(stack *a, stack *b)
+void	rrr(stack *a_stack, stack *b_stack)
 {
-	rra(a);
-	rrb(b);
+	rra(a_stack);
+	rrb(b_stack);
 }

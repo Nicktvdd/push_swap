@@ -6,18 +6,19 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/16 12:18:15 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:38:46 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-int	*sort_small_stack(int stack_size, int *a_stack)
+stack	*sort_small_stack(int argc, stack *a_stack, stack *b_stack)
 {
-	if (stack_size == 3)
+	if (argc == 3)
 		sort_3(a_stack);
-	if (stack_size == 5)
-		sort_5(a_stack);
+	if (argc == 5)
+		sort_5(a_stack, b_stack);
+	return (a_stack);
 }
 
 void	sort_3(int *a_stack)
@@ -53,19 +54,19 @@ void	sort_5(int *a_stack, int *b_stack)
 {
 		int	value;
 
-	while (!is_empty(a))
+	while (!is_empty(a_stack))
 	{
-		value = pop(a);
-		if (is_empty(b) || peek(b) >= value)
-			push(b, value);
+		value = pop(a_stack);
+		if (is_empty(b_stack) || peek(b_stack) >= value)
+			push(b_stack, value);
 		else
 		{
-			while (!isempty(b) && peek(b) < value)
-				pa(a, b);
-			push(b, value);
+			while (!isempty(b_stack) && peek(b_stack) < value)
+				pa(a_stack, b_stack);
+			push(b_stack, value);
 		}
 	}
-	while (!is_empty(b))
-		pa(a, b);
+	while (!is_empty(b_stack))
+		pa(a_stack, b_stack);
 	
 }

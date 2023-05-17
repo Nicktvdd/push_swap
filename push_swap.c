@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/16 13:44:04 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:39:53 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int	main(int argc, char **argv)
 	a_stack = parse(argc, argv);
 	b_stack->top = NULL;
 	is_sorted(a_stack);
+	if (argc < 6)
+		sort_small_stack(argc, a_stack, b_stack);
+	else
+		sort_big_stack(a_stack, b_stack);
 	
 	
 	return (0);
