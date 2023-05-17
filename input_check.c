@@ -6,22 +6,24 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/12 15:20:33 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:43:13 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	is_sorted(int *a_stack)
+#include "./header.h"
+
+void	is_sorted(stack *a_stack)
 {
-	int	flag;
 	int	i;
-	
-	flag = 0;
+
 	i = 0;
-	while(a_stack[i])
+	while (i < a_stack->top) 
 	{
-		if (a_stack[i + 1] && (a_stack[i + 1] < a_stack[i]))
-			errormessage();
+		if (a_stack->items[i] > a_stack->items[i + 1])
+			return (0);
+		i++;
 	}
+	errormessage();
 }
 //checks for enough inputs
 //if everything is a digit
@@ -54,26 +56,22 @@ void	is_valid_input(int argc, char **argv)
 }
 
 //check if there is a duplicate. could also compare ints?
-void	is_duplicate(int argc, char **argv)
+void	is_duplicate(stack *a_stack) 
 {
-	int	len;
-	int i;
-	int	j;
+    int i;
+    int j;
 
-	len = 0;
 	i = 0;
 	j = 0;
-	while (i <= (argc / 2))
+    while (i <= (a_stack->top / 2)) 
 	{
-		while (argv[j])
+        j = 0;
+        while (j <= a_stack->top) 
 		{
-			if (ft_strlen(argv[i]) > ft_strlen(argv[j]))
-				len = ft_strlen(argv[i]);
-				if (!ft_strncmp(argv[i], argv[j]))
-					errormessage();
-			j++;
-		}
-		j = 0;
-		i++;
-	}
+			if (a_stack->items[i] == a_stack->items[j])
+				errormessage();
+            j++;
+        }
+        i++;
+    }
 }

@@ -6,11 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 15:29:46 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:42:14 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
+
+// implementation of radix	
 
 void	sort_big_stack(stack *a, stack *b)
 {

@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/16 12:04:03 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:47:29 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,42 @@ int	ft_atol(const char *str)
 	return ((int)res * min);
 }
 
-int	parse(int argc, char** argv)
+stack	split_args(stack *a_stack, char** argv)
+{
+	int		i;
+	char	*buf;
+	int		num;
+
+	i = 0;
+	buf = ft_split(argv[0], ' ');
+	while (buf[i])
+	{
+		num = ft_atol(argv[i]);
+		push(&a_stack, num);
+		free(buf[i]);
+	}
+	free(buf);
+}
+stack*	parse(int argc, char** argv)
 {
 	//put numbers in the stack A if no errors are detected
-
 	//check if the numbers in A are sorted. If so, end the program, call is_a_sorted()
 
 	int		i;
 	int		num;
-	stack 	a_stack;
-	stack	b_stack;
+	stack 	*a_stack;
 	
 	i = 0;
-
-	while (i < argc)
-	{
-		num = ft_atol(argv[i]);
-		push(&a_stack, num);
-	}
-
-	b_stack.top = NULL;
-	
+	if (argc == 2)
+		split_args(a_stack, argv);
+	else
+		while (i < argc)
+		{
+			num = ft_atol(argv[i]);
+			push(a_stack, num);
+		}
+	return (a_stack);
 	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
-	
 	
 }
 

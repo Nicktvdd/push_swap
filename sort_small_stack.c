@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/15 15:23:57 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:18:15 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,23 @@ void	sort_3(int *a_stack)
 	}
 }
 
-void	sort_5(int *a_stack)
+void	sort_5(int *a_stack, int *b_stack)
 {
-	
+		int	value;
+
+	while (!is_empty(a))
+	{
+		value = pop(a);
+		if (is_empty(b) || peek(b) >= value)
+			push(b, value);
+		else
+		{
+			while (!isempty(b) && peek(b) < value)
+				pa(a, b);
+			push(b, value);
+		}
+	}
+	while (!is_empty(b))
+		pa(a, b);
 	
 }
