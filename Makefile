@@ -1,6 +1,6 @@
 NAME = push_swap
-OBJS = input_check.o operations.o parse.o push_swap.o sort_big_stack.o sort_small_stack.o utils.o
-SRCS = $(OBJS:.o=.c)
+SRCS = input_check.c operations.c parse.c push_swap.c sort_big_stack.c sort_small_stack.c utils.c 
+OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft/
 LIBFT_NAME = libft.a
@@ -13,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-		cc $(CFLAGS) $(LDFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
+		cc $(CFLAGS) $(LDFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME) -fsanitize=address
 
 %.o: %.c
 		cc $(CFLAGS) -c $< -o $@

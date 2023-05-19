@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 14:09:49 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:23:37 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 	// BUT WHAT IF THE RESULT IS 0 BECAUSE INPUT IS 0?
 	// -> THEN WE EXIT() IF THERE IS AN ERROR
 #include "./header.h"
+
+stack	*create_stack()
+{
+	stack	*new_stack;
+	new_stack = (stack*)malloc(sizeof(stack));
+	if (new_stack == NULL)
+		errormessage();
+	new_stack->top = -1;
+	return (new_stack);
+}
 
 int	ft_overflow(int min)
 {
@@ -92,15 +102,18 @@ stack*	parse(int argc, char** argv)
 	stack 	*a_stack;
 	
 	i = 0;
-	a_stack = NULL;
+	a_stack = create_stack();
 	if (argc == 2)
 		split_args(a_stack, argv);
 	else
+	{
 		while (i < argc)
 		{
 			num = ft_atol(argv[i]);
 			push(a_stack, num);
+			i++;
 		}
+	}
 	return (a_stack);
 	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
 	
