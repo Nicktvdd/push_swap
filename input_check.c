@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 14:30:05 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:53:33 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,30 @@ void	is_valid_input(int argc, char **argv)
 	int	j;
 	
 	whitespace = 0;
-	i = 0;
+	i = 1;
 	j = 0;
+	ft_printf("%s\n", argv[1]);
 	if (argc < 2)
 		exit (0);
 	while (argv[i])
 	{
-		while (ft_isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
+		while (argv[i][j])
 		{
-			if (argv[i][j] == ' ')
-				whitespace++;
-			if (whitespace > 1 && argc > 2)
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
+			{
+				if (argv[i][j] == ' ')
+					whitespace++;
+				if (whitespace > 1 && argc > 2)
+					errormessage();
+			}
+			else
 				errormessage();
 			j++;
 		}
+		j = 0;
 		i++;
 	}
-	if (argv[i][j])
-		errormessage();
+		ft_printf("%s\n", __func__);
 }
 
 //check if there is a duplicate. could also compare ints?
