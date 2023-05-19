@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 13:59:56 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:32:08 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sa(stack *a_stack)
 	temp = a_stack->items[a_stack->top];
 	a_stack->items[a_stack->top] = a_stack->items[a_stack->top];
 	a_stack->items[a_stack->top - 1] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	sb(stack *b_stack)
@@ -32,12 +33,14 @@ void	sb(stack *b_stack)
 	temp = b_stack->items[b_stack->top];
 	b_stack->items[b_stack->top] = b_stack->items[b_stack->top];
 	b_stack->items[b_stack->top - 1] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	ss(stack *a_stack, stack *b_stack)
 {
 	sa(a_stack);
 	sb(b_stack);
+	ft_printf("%s\n", __func__);
 }
 
 void	pa(stack *a_stack, stack *b_stack)
@@ -45,6 +48,7 @@ void	pa(stack *a_stack, stack *b_stack)
 	if (is_empty(b_stack)) 
 		return;
 	push(a_stack, pop(b_stack));
+	ft_printf("%s\n", __func__);
 }
 
 void	pb(stack *a_stack, stack *b_stack)
@@ -52,6 +56,7 @@ void	pb(stack *a_stack, stack *b_stack)
 	if (is_empty(a_stack)) 
 		return;
 	push(b_stack, pop(a_stack));
+	ft_printf("%s\n", __func__);
 }
 
 void	ra(stack *a_stack)
@@ -68,6 +73,7 @@ void	ra(stack *a_stack)
 		i--;
 	}
 	a_stack->items[0] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	rb(stack *b_stack)
@@ -84,12 +90,14 @@ void	rb(stack *b_stack)
 		i--;
 	}
 	b_stack->items[0] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	rr(stack *a_stack, stack *b_stack)
 {
 	ra(a_stack);
 	rb(b_stack);
+	ft_printf("%s\n", __func__);
 }
 
 void	rra(stack *a_stack)
@@ -107,6 +115,7 @@ void	rra(stack *a_stack)
 		i++;
 	}
 	a_stack->items[a_stack->top] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	rrb(stack *b_stack)
@@ -124,10 +133,12 @@ void	rrb(stack *b_stack)
 		i++;
 	}
 	b_stack->items[b_stack->top] = temp;
+	ft_printf("%s\n", __func__);
 }
 
 void	rrr(stack *a_stack, stack *b_stack)
 {
 	rra(a_stack);
 	rrb(b_stack);
+	ft_printf("%s\n", __func__);
 }
