@@ -15,16 +15,14 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
 		cc $(CFLAGS) $(LDFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 
--include $(SRCS:.c=.d)
-
 %.o: %.c
-		cc $(CFLAGS) -MMD -c $< -o $@
+		cc $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
 		make -C $(LIBFT_DIR)
 
 clean:
-		rm -f $(OBJS) $(SRCS:.c=.d)
+		rm -f $(OBJS)
 		make -C $(LIBFT_DIR) clean
 
 fclean: clean
