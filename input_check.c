@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 13:56:21 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:30:05 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	is_duplicate(stack *a_stack)
 
 	i = 0;
 	j = 0;
-    while (i <= (a_stack->top / 2)) 
+    while (i <= (a_stack->top)) 
 	{
         j = 0;
         while (j <= a_stack->top) 
