@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 14:23:37 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:37:32 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ stack	*split_args(stack *a_stack, char** argv)
 		num = ft_atol(argv[i]);
 		push(a_stack, num);
 		free(buf[i]);
+		i++;
 	}
 	free(buf);
 	return (a_stack);
@@ -96,12 +97,11 @@ stack*	parse(int argc, char** argv)
 {
 	//put numbers in the stack A if no errors are detected
 	//check if the numbers in A are sorted. If so, end the program, call is_a_sorted()
-
 	int		i;
 	int		num;
 	stack 	*a_stack;
 	
-	i = 0;
+	i = 1;
 	a_stack = create_stack();
 	if (argc == 2)
 		split_args(a_stack, argv);
