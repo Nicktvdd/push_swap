@@ -13,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-		cc $(CFLAGS) $(LDFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME) -fsanitize=address
+		cc $(CFLAGS) $(LDFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 %.o: %.c
 		cc $(CFLAGS) -c $< -o $@
