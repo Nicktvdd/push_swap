@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/22 15:28:30 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:34:11 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	check_long(int min, long res)
 		if (res == 2147483648)
 			errormessage();
 	}
-		if (res > 2147483647)
+	else if (res > 2147483647)
 			errormessage();
 }
 
@@ -81,11 +81,12 @@ stack	*split_args(stack *a_stack, char** argv)
 	char	**buf;
 	int		num;
 
-	i = 0;
-	buf = ft_split(argv[0], ' ');
+	i = 1;
+	ft_printf("%s\n", argv[1]);
+	buf = ft_split(argv[1], ' ');
 	while (buf[i])
 	{
-		num = ft_atol(argv[i]);
+		num = ft_atol(buf[i]);
 		push(a_stack, num);
 		free(buf[i]);
 		i++;
@@ -116,7 +117,6 @@ stack*	parse(int argc, char** argv)
 	}
 	return (a_stack);
 	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
-	
 }
 
 //after parsing and converting to int, use itoa and the strncmp to compare 
