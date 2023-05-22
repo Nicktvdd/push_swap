@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/22 15:34:11 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:49:51 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ stack	*split_args(stack *a_stack, char** argv)
 	char	**buf;
 	int		num;
 
-	i = 1;
-	ft_printf("%s\n", argv[1]);
+	i = 0;
 	buf = ft_split(argv[1], ' ');
 	while (buf[i])
 	{
