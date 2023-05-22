@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/22 14:38:52 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:00:35 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_sorted(stack *a_stack)
 //checks for enough inputs
 //if everything is a digit
 //if there is whitespace in one of the arguments, it only accepts one argument
-void	is_valid_input(int argc, char **argv)
+int	is_valid_input(int argc, char **argv)
 {
 	int	whitespace;
 	int	i;
@@ -58,6 +58,7 @@ void	is_valid_input(int argc, char **argv)
 		j = 0;
 		i++;
 	}
+	return (whitespace + 1);
 }
 
 void	is_duplicate(stack *a_stack)

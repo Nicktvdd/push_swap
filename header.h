@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 14:28:22 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:02:16 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 
 void	errormessage();
 void	is_duplicate(stack *a_stack);
-void	is_valid_input(int argc, char **argv);
+int		is_valid_input(int argc, char **argv);
 int		is_sorted(stack *a_stack);
 void 	sa(stack *a_stack);
 void 	sb(stack *b_stack);
