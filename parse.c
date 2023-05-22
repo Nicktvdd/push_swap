@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 14:37:32 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:28:30 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_atol(const char *str)
 	{
 		res = (res * 10) + (str[i++] - '0');
 		if (res < 0)
-				return (ft_overflow(min));
+				errormessage();
 	}
 	check_long(min, res);
 	return ((int)res * min);
