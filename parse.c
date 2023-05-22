@@ -6,14 +6,10 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/22 15:49:51 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:53:58 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-	// modified atoi here where you check if the long is
-	// < INT_MAX || > INT_MIN
-	// BUT WHAT IF THE RESULT IS 0 BECAUSE INPUT IS 0?
-	// -> THEN WE EXIT() IF THERE IS AN ERROR
 #include "./header.h"
 
 stack	*create_stack()
@@ -95,8 +91,6 @@ stack	*split_args(stack *a_stack, char** argv)
 }
 stack*	parse(int argc, char** argv)
 {
-	//put numbers in the stack A if no errors are detected
-	//check if the numbers in A are sorted. If so, end the program, call is_a_sorted()
 	int		i;
 	int		num;
 	stack 	*a_stack;
@@ -115,8 +109,4 @@ stack*	parse(int argc, char** argv)
 		}
 	}
 	return (a_stack);
-	//if size of a < 5, call function sort small stack(), else call function sort_big_stack()
 }
-
-//after parsing and converting to int, use itoa and the strncmp to compare 
-//if it's the same (not a long, or if error happened)
