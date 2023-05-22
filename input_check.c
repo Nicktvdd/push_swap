@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 13:55:55 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:38:52 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,17 @@ void	is_valid_input(int argc, char **argv)
 	}
 }
 
-//check if there is a duplicate. could also compare ints?
 void	is_duplicate(stack *a_stack)
 {
     int i;
     int j;
 
 	i = 0;
-	j = 0;
-    while (i <= (a_stack->top)) 
+	j = (i + 1);
+    while (a_stack->items[i]) 
 	{
-        j = 0;
-        while (j <= a_stack->top) 
+        j = (i + 1);
+        while (a_stack->items[j]) 
 		{
 			if (a_stack->items[i] == a_stack->items[j])
 				errormessage();
