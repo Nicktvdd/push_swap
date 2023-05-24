@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 11:32:08 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:12:31 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	sa(stack *a_stack)
 	if (a_stack->top <1) 
 		return;
 	int	temp;
-
 	temp = a_stack->items[a_stack->top];
-	a_stack->items[a_stack->top] = a_stack->items[a_stack->top];
+	a_stack->items[a_stack->top] = a_stack->items[a_stack->top - 1];
 	a_stack->items[a_stack->top - 1] = temp;
 	ft_printf("%s\n", __func__);
+	print_stack(a_stack);
 }
 
 void	sb(stack *b_stack)
@@ -49,6 +49,7 @@ void	pa(stack *a_stack, stack *b_stack)
 		return;
 	push(a_stack, pop(b_stack));
 	ft_printf("%s\n", __func__);
+		print_stack(a_stack);
 }
 
 void	pb(stack *a_stack, stack *b_stack)
@@ -57,6 +58,7 @@ void	pb(stack *a_stack, stack *b_stack)
 		return;
 	push(b_stack, pop(a_stack));
 	ft_printf("%s\n", __func__);
+		print_stack(a_stack);
 }
 
 void	ra(stack *a_stack)
@@ -74,6 +76,7 @@ void	ra(stack *a_stack)
 	}
 	a_stack->items[0] = temp;
 	ft_printf("%s\n", __func__);
+		print_stack(a_stack);
 }
 
 void	rb(stack *b_stack)
@@ -116,6 +119,7 @@ void	rra(stack *a_stack)
 	}
 	a_stack->items[a_stack->top] = temp;
 	ft_printf("%s\n", __func__);
+		print_stack(a_stack);
 }
 
 void	rrb(stack *b_stack)

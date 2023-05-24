@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/19 14:23:27 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:16:28 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ int	pop(stack *s)
 {
 	if (s->top == -1)
 		errormessage();
-	return s->items[s->top--];
+	return (s->items[s->top--]);
 }
 
 int	peek(stack *s)
 {
 	if (s->top == -1)
 		errormessage();
-	return s->items[s->top--];
+	return (s->items[s->top--]);
 }
 
 int	is_empty(stack *s)
 {
-	return s->top == -1;
+	return (s->top == -1);
 }
 
 //debugging purposeses only
