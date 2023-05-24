@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/24 16:12:31 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:24:08 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(stack *a_stack)
 {
-	if (a_stack->top <1) 
+	if (a_stack->top < 0) 
 		return;
 	int	temp;
 	temp = a_stack->items[a_stack->top];
@@ -26,7 +26,7 @@ void	sa(stack *a_stack)
 
 void	sb(stack *b_stack)
 {
-	if (b_stack->top <1) 
+	if (b_stack->top < 0) 
 		return;
 	int	temp;
 	
@@ -63,7 +63,8 @@ void	pb(stack *a_stack, stack *b_stack)
 
 void	ra(stack *a_stack)
 {
-	if (a_stack->top < 1) return;
+	if (a_stack->top < 0) 
+		return;
 	int	i;
 	int	temp;
 
@@ -81,7 +82,7 @@ void	ra(stack *a_stack)
 
 void	rb(stack *b_stack)
 {
-	if (b_stack->top < 1) return;
+	if (b_stack->top < 0) return;
 	int	i;
 	int	temp;
 
@@ -105,7 +106,7 @@ void	rr(stack *a_stack, stack *b_stack)
 
 void	rra(stack *a_stack)
 {
-	if (a_stack->top < 1)
+	if (a_stack->top < 0)
 		return;
 	int	i;
 	int	temp;
@@ -124,7 +125,7 @@ void	rra(stack *a_stack)
 
 void	rrb(stack *b_stack)
 {
-	if (b_stack->top < 1)
+	if (b_stack->top < 0)
 		return;
 	int	i;
 	int	temp;

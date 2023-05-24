@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/24 16:16:28 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:31:39 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	push(stack *s, int value)
 	{
 		errormessage();
 	}
-	s->items[++s->top] = value;
+	s->items[++s->top] = value; // this is wrong, this is why it is incrementing. Or i need to find the
+	// lowest number and put that into a different variable
 }
 
 int	pop(stack *s)

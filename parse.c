@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/24 12:48:27 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:32:03 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ stack*	parse(int argc, char** argv)
 	
 	i = 1;
 	a_stack = create_stack();
+	ft_printf("a_stack->top: %i\n", a_stack->top);
+	ft_printf("argc: %i\n", argc);
 	if (argc == 2)
 		split_args(a_stack, argv);
 	else
@@ -105,10 +107,12 @@ stack*	parse(int argc, char** argv)
 		while (i < argc) // check here if it is sorted already?
 		{
 			num = ft_atol(argv[i]);
-			push(a_stack, num);
+			push(a_stack, num); // problem happens in push, it increments ->top and causes errors because of that
 			i++;
+			ft_printf("a_stack->top: %i\n", a_stack->top);
 		}
 	}
+	ft_printf("a_stack->top: %i\n", a_stack->top);
 	ft_printf("top parse: %i\n", a_stack->items[a_stack->top]);
 	return (a_stack);
 }
