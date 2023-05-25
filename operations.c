@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 13:24:59 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:08:20 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	sa(stack *a_stack)
 	if (a_stack->bot < 0) 
 		return;
 	int	temp;
+	ft_printf("temp: %i\n", a_stack->items[a_stack->top]);
 	temp = a_stack->items[a_stack->top];
 	a_stack->items[a_stack->top] = a_stack->items[a_stack->top + 1];
 	a_stack->items[a_stack->top + 1] = temp;
@@ -52,12 +53,11 @@ void	pa(stack *a_stack, stack *b_stack)
 	if (is_empty(b_stack)) 
 		return;
 	push(a_stack, pop(b_stack));
-	while (i < a_stack->bot)
+	while (i < b_stack->bot)
 	{
-		b_stack->items[i] = a_stack->items[i + 1];
+		b_stack->items[i] = b_stack->items[i + 1];
 		i++;
 	}
-	b_stack->bot--;
 	ft_printf("%s\n", __func__);
 		print_stack(a_stack);
 		print_stackb(b_stack);
@@ -71,12 +71,13 @@ void	pb(stack *a_stack, stack *b_stack)
 	if (is_empty(a_stack)) 
 		return;
 	push(b_stack, pop(a_stack));
-	while (i < a_stack->bot)
+		print_stack(a_stack);
+		print_stackb(b_stack);
+	while (i <= a_stack->bot)
 	{
 		a_stack->items[i] = a_stack->items[i + 1];
 		i++;
 	}
-	a_stack->bot--;
 	ft_printf("%s\n", __func__);
 		print_stack(a_stack);
 		print_stackb(b_stack);

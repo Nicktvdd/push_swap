@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 14:05:22 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:10:47 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 void	push(stack *s, int value)
 {
+	int	i;
+
+	i = s->bot++;
 	if (s->bot == STACK_SIZE - 1)
 		errormessage();
-	s->items[++s->bot] = value; // this was wrong, this is why it is incrementing. Or i need to find the
+	while (i >= s->top)
+	{
+		s->items[i + 1] = s->items[i];
+		i--;
+	}
+	s->items[s->top] = value; // this was wrong, this is why it is incrementing. Or i need to find the
 	// lowest number and put that into a different variable. now it's bot.
 }
 
@@ -24,14 +32,16 @@ int	pop(stack *s)
 {
 	if (s->top == s->bot)
 		errormessage();
-	return (s->items[s->bot--]);
+	s->bot--;
+	return (s->items[s->top]);
 }
 
 int	peek(stack *s)
 {
 	if (s->top == s->bot)
 		errormessage();
-	return (s->items[s->bot--]);
+	s->bot--;
+	return (s->items[s->top]);
 }
 
 int	is_empty(stack *s)
