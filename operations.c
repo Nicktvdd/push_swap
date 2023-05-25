@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 13:22:01 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:24:59 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,18 @@ void	ss(stack *a_stack, stack *b_stack)
 
 void	pa(stack *a_stack, stack *b_stack)
 {
+	int	i;
+	
+	i = 0;
 	if (is_empty(b_stack)) 
 		return;
 	push(a_stack, pop(b_stack));
+	while (i < a_stack->bot)
+	{
+		b_stack->items[i] = a_stack->items[i + 1];
+		i++;
+	}
+	b_stack->bot--;
 	ft_printf("%s\n", __func__);
 		print_stack(a_stack);
 		print_stackb(b_stack);
@@ -56,9 +65,18 @@ void	pa(stack *a_stack, stack *b_stack)
 
 void	pb(stack *a_stack, stack *b_stack)
 {
+	int	i;
+	
+	i = 0;
 	if (is_empty(a_stack)) 
 		return;
 	push(b_stack, pop(a_stack));
+	while (i < a_stack->bot)
+	{
+		a_stack->items[i] = a_stack->items[i + 1];
+		i++;
+	}
+	a_stack->bot--;
 	ft_printf("%s\n", __func__);
 		print_stack(a_stack);
 		print_stackb(b_stack);
