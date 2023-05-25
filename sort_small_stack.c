@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 15:34:49 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:07:42 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,22 @@ void sort_5(stack* a_stack, stack* b_stack)
 	pb(a_stack, b_stack);
 	pb(a_stack, b_stack);
 	sort_3(a_stack);
-	while (!is_empty(b_stack))
+	ft_printf("sort_3 finished\n\n");
+	while (peek(b_stack))
 	{
+		ft_printf("in while\n");
 		if (peek(b_stack) < peek(a_stack))
+		{
 			pa(a_stack, b_stack);
+		ft_printf("after if\n");
+		}
 		else
-			ra;
+			ra(a_stack);
+		ft_printf("after else\n");
 	}
-	
+	ft_printf("after pushing, before sorting\n");
+	while (!is_sorted(a_stack))
+		ra(a_stack);
 }
 
 stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)

@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 15:22:14 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:39:58 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ void	pb(stack *a_stack, stack *b_stack)
 	if (is_empty(a_stack)) 
 		return;
 	push(b_stack, pop(a_stack));
-		print_stack(a_stack);
-		print_stackb(b_stack);
 	while (i <= a_stack->bot)
 	{
 		a_stack->items[i] = a_stack->items[i + 1];
