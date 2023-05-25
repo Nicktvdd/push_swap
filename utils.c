@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 15:10:47 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:24:16 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	peek(stack *s)
 {
 	if (s->top == s->bot)
 		errormessage();
-	s->bot--;
 	return (s->items[s->top]);
 }
 

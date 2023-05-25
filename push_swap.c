@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/24 11:24:54 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:37:49 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	main(int argc, char **argv)
 	b_stack = create_stack();
 	is_duplicate(a_stack);
 	print_stack(a_stack);
-	is_sorted(a_stack);
+	if (is_sorted(a_stack))
+		errormessage();
 	if (argc == 2)
 		{
 			if (argnum < 6)

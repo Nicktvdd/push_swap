@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 11:02:30 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:37:17 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	is_sorted(stack *a_stack)
 			return (0);
 		i++;
 	}
-	errormessage();
-	return (0);
+	return (1);
 }
 //checks for enough inputs
 //if everything is a digit
