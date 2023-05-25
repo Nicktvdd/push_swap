@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 13:28:15 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 14:37:05 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ stack	*split_args(stack *a_stack, char** argv)
 	while (buf[i])
 	{
 		num = ft_atol(buf[i]);
-		push(a_stack, num);
+		a_stack->items[++a_stack->bot] = num;
 		free(buf[i]);
 		i++;
 	}
@@ -106,7 +106,7 @@ stack*	parse(int argc, char** argv)
 		while (i < argc) // check here if it is sorted already?
 		{
 			num = ft_atol(argv[i]);
-			push(a_stack, num);
+			a_stack->items[++a_stack->bot] = num;
 			i++;
 		}
 	}
