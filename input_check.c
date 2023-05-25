@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/22 16:00:35 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:02:30 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sorted(stack *a_stack)
 	int	i;
 
 	i = 0;
-	while (i < a_stack->top) 
+	while (i < a_stack->bot) 
 	{
 		if (a_stack->items[i] > a_stack->items[i + 1])
 			return (0);

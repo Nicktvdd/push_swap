@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/24 16:32:03 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:24:51 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ stack	*create_stack()
 	new_stack = (stack*)malloc(sizeof(stack));
 	if (new_stack == NULL)
 		errormessage();
-	new_stack->top = -1;
+	new_stack->top = 0;
+	new_stack->bot = -1;
 	return (new_stack);
 }
 

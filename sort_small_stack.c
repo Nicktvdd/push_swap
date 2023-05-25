@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 14:24:22 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 11:43:21 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void sort_3(stack* a_stack)
     }
     else // 1st number is bigger
     {
-        if (a_stack->items[1] > a_stack->items[2]) // 132
+        if (a_stack->items[0] < a_stack->items[2]) // 132
         {
             sa(a_stack);
             ra(a_stack);
