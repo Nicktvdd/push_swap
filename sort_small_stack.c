@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 11:43:21 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:18:08 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ void sort_3(stack* a_stack)
 
 void sort_5(stack* a_stack, stack* b_stack)
 {
+	pb(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	sort_3(a_stack);
+	
+	
+}
+
+/* void sort_5(stack* a_stack, stack* b_stack)
+{
     int value;
 
     while (!is_empty(a_stack))
@@ -59,7 +68,7 @@ void sort_5(stack* a_stack, stack* b_stack)
     }
     while (!is_empty(b_stack))
         pa(a_stack, b_stack);
-}
+} */
 
 stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)
 {

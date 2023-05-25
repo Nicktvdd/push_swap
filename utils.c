@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 12:07:00 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:21:03 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,15 @@ int	is_empty(stack *s)
 //debugging purposeses only
 void	print_stack(stack *s)
 {
-	ft_printf("Stack: ");
+	ft_printf("Stack a: ");
+	for (int i = 0; i <= s->bot; i++) 
+		ft_printf("%d ", s->items[i]);
+	ft_printf("\n");
+}
+
+void	print_stackb(stack *s)
+{
+	ft_printf("Stack b: ");
 	for (int i = 0; i <= s->bot; i++) 
 		ft_printf("%d ", s->items[i]);
 	ft_printf("\n");

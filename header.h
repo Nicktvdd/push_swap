@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 11:02:06 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:22:18 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ int		pop(stack *s);
 int		peek(stack *s);
 int		is_empty(stack *s);
 void	print_stack(stack *s);
+void	print_stackb(stack *s);
 stack	*create_stack();
