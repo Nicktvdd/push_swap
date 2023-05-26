@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 16:00:41 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:28:45 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	push(stack *s, int value)
 {
 	int	i;
 
+ 	if (s->bot == STACK_SIZE + 1)
+		errormessage();
 	i = s->bot++;
-/* 	if (s->bot == STACK_SIZE + 1)
-		errormessage(); */
 	while (i >= s->top)
 	{
 		s->items[i + 1] = s->items[i];
@@ -30,7 +30,7 @@ void	push(stack *s, int value)
 
 int	pop(stack *s)
 {
-	if (s->top == s->bot)
+	if (s->bot == -1)
 		return (0);
 	s->bot--;
 	return (s->items[s->top]);
@@ -38,7 +38,7 @@ int	pop(stack *s)
 
 int	peek(stack *s)
 {
- 	if (s->top == s->bot)
+ 	if (s->bot == -1)
 		return (0); 
 	return (s->items[s->top]);
 }

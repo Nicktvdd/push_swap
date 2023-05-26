@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 16:07:42 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:27:07 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,30 +41,47 @@ void sort_3(stack* a_stack)
     }
 }
 
+/* void sort_5(stack* a_stack, stack* b_stack)
+{
+	pb(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	sort_3(a_stack);
+	if (peek(b_stack) < a_stack->items[0])
+		pa(a_stack, b_stack);
+	else
+	{
+		pa(a_stack, b_stack);
+		ra(a_stack);
+	}
+	if (peek(b_stack) < a_stack->items[0])
+		pa(a_stack, b_stack);
+	else
+	{
+		pa(a_stack, b_stack);
+		ra(a_stack);
+	}
+} */
+
+
+
 void sort_5(stack* a_stack, stack* b_stack)
 {
 	int	i;
 
 	i = 0;
+	while (a_stack->items[0] > a_stack->items[1])
+		ra(a_stack);
 	pb(a_stack, b_stack);
+	while (a_stack->items[0] > a_stack->items[1])
+		ra(a_stack);
 	pb(a_stack, b_stack);
 	sort_3(a_stack);
 	ft_printf("sort_3 finished\n\n");
+	ft_printf("peek b_stack: %i\n", peek(b_stack));
 	while (peek(b_stack))
-	{
-		ft_printf("in while\n");
-		if (peek(b_stack) < peek(a_stack))
-		{
 			pa(a_stack, b_stack);
-		ft_printf("after if\n");
-		}
-		else
-			ra(a_stack);
-		ft_printf("after else\n");
-	}
-	ft_printf("after pushing, before sorting\n");
-	while (!is_sorted(a_stack))
-		ra(a_stack);
+	//pa(a_stack, b_stack);
+			ft_printf("peek b_stack: %i\n", peek(b_stack));
 }
 
 stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)

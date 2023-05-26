@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/25 15:39:58 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:07:42 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	sa(stack *a_stack)
 {
-	if (a_stack->bot < 0) 
+	if (a_stack->bot < 1) 
 		return;
 	int	temp;
-	ft_printf("temp: %i\n", a_stack->items[a_stack->top]);
+	
 	temp = a_stack->items[a_stack->top];
 	a_stack->items[a_stack->top] = a_stack->items[a_stack->top + 1];
 	a_stack->items[a_stack->top + 1] = temp;
@@ -27,7 +27,7 @@ void	sa(stack *a_stack)
 
 void	sb(stack *b_stack)
 {
-	if (b_stack->bot < 0) 
+	if (b_stack->bot < 1) 
 		return;
 	int	temp;
 	
