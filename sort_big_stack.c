@@ -6,88 +6,51 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/17 14:19:17 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:38:47 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-// implementation of radix	
-
-int	find_max_value(stack *a)
+ void sort_big_stack(stack* a_stack, stack* b_stack)
 {
-    int max_value;
-	int value;
-	
-	max_value = peek(a);
-    while (!is_empty(a))
-	{
-        value = pop(a);
-        if (value > max_value)
-		{
-            max_value = value;
+    // Sort the first 20 numbers using insertion sort
+    for (int i = 0; i < 20; i++)
+    {
+        while (a_stack->top > i)
+        {
+            if (a_stack->items[a_stack->top] > a_stack->items[a_stack->top - 1])
+                sa(a_stack);
+            ra(a_stack);
         }
-        push(a, value);
     }
-    return max_value;
-}
 
-void	distribute_elements(stack *a, stack *buckets)
-{
-	int value;
-	
-    while (!is_empty(a))
-	{
-        value = pop(a);
-        push(&buckets[value % 10], value);
-    }
-}
+    // Push the largest 20 numbers to stack B
+    for (int i = 0; i < 20; i++)
+        pb(a_stack, b_stack);
 
-void	sort_by_digit(stack *buckets, int digit, int max_value)
-{
-    while (max_value / (digit) > 0)
-	{
-        int i;
-		
-		i = 0;
-        while (i < 10)
-		{
-            if (!is_empty(&buckets[i]))
-			{
-                int value = pop(&buckets[i]);
-                push(&buckets[(value / (digit)) % 10], value);
-            }
-			else
-                i++;
+    // Sort the remaining 80 numbers using selection sort
+    for (int i = 0; i < 80; i++)
+    {
+        int min_idx = i;
+        for (int j = i + 1; j < 100; j++)
+        {
+            if (a_stack->items[j] < a_stack->items[min_idx])
+                min_idx = j;
         }
-        (digit) *= 10;
+        while (min_idx < a_stack->top)
+        {
+            if (min_idx < a_stack->top - min_idx)
+                ra(a_stack);
+            else
+                rra(a_stack);
+        }
+        pb(a_stack, b_stack);
     }
+
+    // Push back the sorted numbers from stack B to stack A
+    while (b_stack->top != -1)
+        pa(a_stack, b_stack);
 }
 
-void	move_elements_to_a(stack *a, stack *buckets)
-{
-    int i;
-		
-	i = 0;
-    while (i < 10)
-	{
-        if (!is_empty(&buckets[i]))
-            push(a, pop(&buckets[i]));
-		else
-            i++;
-    }
-}
 
-void	sort_big_stack(stack *a)
-{
-    stack buckets[10];
-    int max_value;
-	int	digit;
-
-	max_value = find_max_value(a);
-	digit = 1;
-	memset(buckets, 0, sizeof(buckets));
-    distribute_elements(a, buckets);
-    sort_by_digit(buckets, digit, max_value);
-    move_elements_to_a(a, buckets);
-}
