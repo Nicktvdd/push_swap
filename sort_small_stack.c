@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/29 12:19:38 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/29 12:39:41 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,19 +94,9 @@ void sort_5(stack* a_stack, stack* b_stack)
 	int	i;
 
 	i = 0;
-	print_stack(a_stack);
-	print_stackb(b_stack);
 	push_smallest(a_stack, b_stack);
 	push_smallest(a_stack, b_stack);
-	ft_printf("a_stack item 0: %i\n", a_stack->items[1]);
-	print_stack(a_stack);
-	print_stackb(b_stack);
-	ft_printf("-sort_3 initiated-\n");
 	sort_3(a_stack);
-	ft_printf("-sort_3 finished-\n");
-	ft_printf("peek b_stack: %i\n", peek(b_stack));
-		print_stack(a_stack);
-	print_stackb(b_stack);
 	while (peek(b_stack))
 			pa(a_stack, b_stack);
 }
