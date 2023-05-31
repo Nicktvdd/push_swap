@@ -6,51 +6,79 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/26 15:38:47 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 13:50:42 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
- void sort_big_stack(stack* a_stack, stack* b_stack)
+int	find_max_num_digits(stack *a_stack)
 {
-    // Sort the first 20 numbers using insertion sort
-    for (int i = 0; i < 20; i++)
+	int max_num;
+	int	num_digits;
+	int	i;
+	
+	max_num = a_stack->items[a_stack->bot];
+	num_digits = 0;
+	i = a_stack->bot + 1;
+	while (i <= a_stack->top)
+	{
+        if (a_stack->items[i] > max_num)
+            max_num = a_stack->items[i];
+		i++;	
+	}
+    while (max_num > 0)
     {
-        while (a_stack->top > i)
-        {
-            if (a_stack->items[a_stack->top] > a_stack->items[a_stack->top - 1])
-                sa(a_stack);
-            ra(a_stack);
-        }
+        max_num /= 10;
+        num_digits++;
     }
-
-    // Push the largest 20 numbers to stack B
-    for (int i = 0; i < 20; i++)
-        pb(a_stack, b_stack);
-
-    // Sort the remaining 80 numbers using selection sort
-    for (int i = 0; i < 80; i++)
-    {
-        int min_idx = i;
-        for (int j = i + 1; j < 100; j++)
-        {
-            if (a_stack->items[j] < a_stack->items[min_idx])
-                min_idx = j;
-        }
-        while (min_idx < a_stack->top)
-        {
-            if (min_idx < a_stack->top - min_idx)
-                ra(a_stack);
-            else
-                rra(a_stack);
-        }
-        pb(a_stack, b_stack);
-    }
-
-    // Push back the sorted numbers from stack B to stack A
-    while (b_stack->top != -1)
-        pa(a_stack, b_stack);
+	return (num_digits);
 }
 
+void sort_big_stack(stack* a_stack, stack* b_stack)
+{
+	int	i;
+	int	num_digits;
+	int	digit;
+	int	num;
+	int	divisor;
+
+	i = 0;
+	num_digits = find_max_num_digits(a_stack);
+	digit = 1;
+    divisor = 1;
+	num = 0;
+
+	while (num_digits >= digit)
+	{
+		ft_printf("digit: %i\n", digit);
+		ft_printf("num_digits: %i\n", num_digits);
+		print_stack(a_stack);
+		print_stackb(b_stack);
+		while (num <= 9)
+		{
+			while (i <= a_stack->bot)
+			{
+				// Check if the current number belongs to the current number
+				if ((a_stack->items[a_stack->top] / divisor) % 10 == num)
+				{
+					// Push it to stack B and continue with the next int
+					pb(a_stack, b_stack);
+				}
+				else
+				{
+					ra(a_stack);
+				}
+				i++;
+			}
+			i = 0;
+			num++;
+		}
+		while (peek(b_stack))
+			pa(a_stack, b_stack);
+		divisor *= 10;
+		digit++;
+		num = 0;
+	}
+}
 

@@ -53,3 +53,4 @@ dkms.conf
 
 push_swap_visualizer
 push_swap
+big_sort_proto.c
