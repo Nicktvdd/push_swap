@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 13:50:42 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:08:44 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 	int	num;
 	int	divisor;
 
-	i = 0;
+	i = a_stack->bot;
 	num_digits = find_max_num_digits(a_stack);
 	digit = 1;
     divisor = 1;
@@ -51,13 +51,9 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 
 	while (num_digits >= digit)
 	{
-		ft_printf("digit: %i\n", digit);
-		ft_printf("num_digits: %i\n", num_digits);
-		print_stack(a_stack);
-		print_stackb(b_stack);
 		while (num <= 9)
 		{
-			while (i <= a_stack->bot)
+			while (i >= 0)
 			{
 				// Check if the current number belongs to the current number
 				if ((a_stack->items[a_stack->top] / divisor) % 10 == num)
@@ -69,10 +65,12 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 				{
 					ra(a_stack);
 				}
-				i++;
+				i--;
 			}
-			i = 0;
+			i = a_stack->bot;
 			num++;
+		print_stack(a_stack);
+		print_stackb(b_stack);
 		}
 		while (peek(b_stack))
 			pa(a_stack, b_stack);
