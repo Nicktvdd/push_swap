@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 16:48:02 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:50:02 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,18 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 	j = 0;
 	while ((max_num >> max_bits) != 0) 
 		++max_bits;
-	while (i < max_bits) // repeat for max_bits times
+	while (i++ < max_bits)
 	{
-		while (j < size)
+		while (j++ < size)
 		{
-			num = peek(a_stack); // top number of A
+			num = peek(a_stack);
 			if (((num >> i)&1) == 1) 
 				ra(a_stack); 
 			else 
 				pb(a_stack, b_stack);
-			j++;
 		}
 		j = 0;
 		while (peek(b_stack))
 			pa(a_stack, b_stack);
-		i++;
 	}
 }
