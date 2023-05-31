@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 14:29:32 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:37:16 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	find_max_num_digits(stack *a_stack)
 	
 	max_num = a_stack->items[a_stack->bot];
 	num_digits = 0;
-	i = a_stack->bot + 1;
-	while (i <= a_stack->top)
+	i = 0;
+	while (i <= a_stack->bot)
 	{
         if (a_stack->items[i] > max_num)
             max_num = a_stack->items[i];
