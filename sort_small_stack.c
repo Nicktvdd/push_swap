@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 14:57:05 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:58:30 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)
 		sa(a_stack);
     if (size == 3)
         sort_3(a_stack);
-	if (size == 4);
+	if (size == 4)
 	{
 		push_smallest(a_stack, b_stack);
 		sort_3(a_stack);
-		pa;
+		pa(a_stack, b_stack);
 	}
     if (size == 5)
         sort_5(a_stack, b_stack);
