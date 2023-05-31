@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/29 12:39:41 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:56:18 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,6 @@ void sort_3(stack* a_stack)
             rra(a_stack);
     }
 }
-
-/* void sort_5(stack* a_stack, stack* b_stack)
-{
-	pb(a_stack, b_stack);
-	pb(a_stack, b_stack);
-	sort_3(a_stack);
-	if (peek(b_stack) < a_stack->items[0])
-		pa(a_stack, b_stack);
-	else
-	{
-		pa(a_stack, b_stack);
-		ra(a_stack);
-	}
-	if (peek(b_stack) < a_stack->items[0])
-		pa(a_stack, b_stack);
-	else
-	{
-		pa(a_stack, b_stack);
-		ra(a_stack);
-	}
-} */
 
 void	push_smallest(stack *a_stack, stack *b_stack)
 {
@@ -103,8 +82,19 @@ void sort_5(stack* a_stack, stack* b_stack)
 
 stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)
 {
+	if (size == 2)
+	{
+		if (a_stack->items[0] > a_stack->items[1])
+			sa(a_stack);
+	}
     if (size == 3)
         sort_3(a_stack);
+	if (size == 4);
+	{
+		push_smallest(a_stack, b_stack);
+		sort_3(a_stack);
+		pa;
+	}
     if (size == 5)
         sort_5(a_stack, b_stack);
     return a_stack;

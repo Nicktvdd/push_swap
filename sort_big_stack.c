@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 14:37:16 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:44:21 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 			}
 			i = a_stack->bot;
 			num++;
-		print_stack(a_stack);
-		print_stackb(b_stack);
+/* 		print_stack(a_stack);
+		print_stackb(b_stack); */
 		}
 		while (peek(b_stack))
 			pa(a_stack, b_stack);
