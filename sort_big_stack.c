@@ -6,80 +6,39 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 14:44:21 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:43:16 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
-
-int	find_max_num_digits(stack *a_stack)
-{
-	int max_num;
-	int	num_digits;
-	int	i;
-	
-	max_num = a_stack->items[a_stack->bot];
-	num_digits = 0;
-	i = 0;
-	while (i <= a_stack->bot)
-	{
-        if (a_stack->items[i] > max_num)
-            max_num = a_stack->items[i];
-		i++;	
-	}
-    while (max_num > 0)
-    {
-        max_num /= 10;
-        num_digits++;
-    }
-	return (num_digits);
-}
+// index it to negate negatives
+// change values to index, but operations on original
+// change to bits
 
 void sort_big_stack(stack* a_stack, stack* b_stack)
 {
-	int	i;
-	int	num_digits;
-	int	digit;
-	int	num;
-	int	divisor;
-
-	i = a_stack->bot;
-	num_digits = find_max_num_digits(a_stack);
-	digit = 1;
-    divisor = 1;
-	num = 0;
-
-	while (num_digits >= digit)
+	int size;
+	int max_num; // the biggest number in a is stack_size - 1
+	int max_bits; // how many bits for max_num 
+	
+	size = a_stack->bot;
+	max_num = size - 1;
+	max_bits = 0;
+	while ((max_num >> max_bits) != 0) ++max_bits;
+	for (int i = 0 ; i < max_bits ; ++i) // repeat for max_bits times
 	{
-		while (num <= 9)
+		for(int j = 0 ; j < size ; ++j)
 		{
-			while (i >= 0)
-			{
-				if (!(a_stack->items[a_stack->top] / divisor))
-					pb(a_stack, b_stack);
-				else
-					ra(a_stack);
-				i--;
-			}
-			i = a_stack->bot;
-			while (i >= 0)
-			{
-				if ((a_stack->items[a_stack->top] / divisor) % 10 == num)
-					pb(a_stack, b_stack);
-				else
-					ra(a_stack);
-				i--;
-			}
-			i = a_stack->bot;
-			num++;
-/* 		print_stack(a_stack);
-		print_stackb(b_stack); */
+			int num = peek(a_stack); // top number of A
+			if (((num >> i)&1) == 1) ra(a_stack); 
+			// if the (i + 1)-th bit is 1, leave in stack a
+			else pb(a_stack, b_stack);
+			// otherwise push to stack b
 		}
+		// put into boxes done
 		while (peek(b_stack))
-			pa(a_stack, b_stack);
-		divisor *= 10;
-		digit++;
-		num = 0;
+			pa(a_stack, b_stack); // while stack b is not empty, do pa
+		
+		// connect numbers done
 	}
 }
-
