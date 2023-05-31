@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/31 14:08:44 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:29:32 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,19 @@ void sort_big_stack(stack* a_stack, stack* b_stack)
 		{
 			while (i >= 0)
 			{
-				// Check if the current number belongs to the current number
-				if ((a_stack->items[a_stack->top] / divisor) % 10 == num)
-				{
-					// Push it to stack B and continue with the next int
+				if (!(a_stack->items[a_stack->top] / divisor))
 					pb(a_stack, b_stack);
-				}
 				else
-				{
 					ra(a_stack);
-				}
+				i--;
+			}
+			i = a_stack->bot;
+			while (i >= 0)
+			{
+				if ((a_stack->items[a_stack->top] / divisor) % 10 == num)
+					pb(a_stack, b_stack);
+				else
+					ra(a_stack);
 				i--;
 			}
 			i = a_stack->bot;
