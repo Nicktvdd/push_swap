@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:31:47 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/01 13:14:13 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/01 13:23:26 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,7 @@ void	create_index(stack *a_stack)
 {
 	stack	temp_stack;
 
-	create_stack(&temp_stack);
-	
 	temp_stack = *a_stack;
 	quicksort_stack(&temp_stack, temp_stack.top, temp_stack.bot);
-	ft_printf("quicksort happened\n");
 	index_stack(a_stack, temp_stack);
-	ft_printf("indexing happened\n");
-	//assign the numbers here
-	print_stack(a_stack);
 }
