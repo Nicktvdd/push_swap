@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = input_check.c operations.c parse.c push_swap.c sort_big_stack.c sort_small_stack.c utils.c 
+SRCS = input_check.c operations.c parse.c push_swap.c sort_big_stack.c sort_small_stack.c utils.c create_index.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft/

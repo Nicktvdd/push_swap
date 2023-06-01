@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/26 15:39:19 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/01 10:49:44 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	main(int argc, char **argv)
 	if (argc < 7) 
 		sort_small_stack((argc - 1), a_stack, b_stack);
 	else
-		sort_big_stack(a_stack, b_stack);
+		create_index(a_stack);
+		//sort_big_stack(a_stack, b_stack);
 	print_stack(a_stack);
 	print_stackb(b_stack);
 	return (0);
