@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:31:47 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/01 12:27:28 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/01 12:47:43 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,26 @@ void quicksort_stack(stack* stk, int low, int high)
     }
 }
 
+void	index_stack(stack *a_stack, stack temp_stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i <= a_stack->bot)
+	{
+		while (j < temp_stack.bot)
+		{
+			if (a_stack->items[i] == temp_stack.items[j])
+				a_stack->items[i] = j;
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+}
+
 void	create_index(stack *a_stack)
 {
 	stack	temp_stack;
@@ -56,6 +76,8 @@ void	create_index(stack *a_stack)
 	temp_stack = *a_stack;
 	quicksort_stack(&temp_stack, temp_stack.top, temp_stack.bot);
 	ft_printf("quicksort happened\n");
+	index_stack(a_stack, temp_stack);
+	ft_printf("indexing happened\n");
 	//assign the numbers here
 	print_stack(&temp_stack);
 }
