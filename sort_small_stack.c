@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 12:56:27 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:56:34 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void sort_5(stack* a_stack, stack* b_stack)
 
 stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)
 {
+	create_index(a_stack);
 	if (size == 2)
 		sa(a_stack);
     if (size == 3)
