@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 13:22:34 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:48:09 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,10 @@ int	is_valid_input(int argc, char **argv)
 			}
 			else
 				errormessage();
-			
 			j++;
 		}
+		if (argv[i][j - 1] == ' ')
+			whitespace--;
 		j = 0;
 		i++;
 	}
