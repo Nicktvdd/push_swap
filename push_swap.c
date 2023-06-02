@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 11:41:25 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:22:55 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	errormessage()
 {
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	exit(0);
 }
 
@@ -33,9 +33,11 @@ int	main(int argc, char **argv)
 	b_stack = create_stack();
 	is_duplicate(a_stack);
 	if (is_sorted(a_stack))
-		errormessage();
+		exit(0);
 	if (argc == 2)
 		{
+			if (argnum <= 1)
+				exit(0);
 			if (argnum < 6)
 				sort_small_stack(argnum, a_stack, b_stack);
 		}

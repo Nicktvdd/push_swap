@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 12:54:31 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:22:34 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	is_valid_input(int argc, char **argv)
 		{
 			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-' || argv[i][j] == ' ')
 			{
+				if (argv[i][j] == '-' && !ft_isdigit(argv[i][j+1]))
+					errormessage();
 				if (argv[i][j] == ' ')
 					whitespace++;
-				if (argv[i][j+1] == ' ' || argv[i][j-1] == '-')
-					errormessage();
 				if (whitespace > 1 && argc > 2)
 					errormessage();
 			}
