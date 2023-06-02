@@ -56,3 +56,4 @@ push_swap
 big_sort_proto.c
 checker_Mac
 checker_OS
+push_swap_tester
