@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 11:31:18 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/02 12:50:00 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_long(int min, long res)
 {
 	if (min < 0)
 	{
-		if (res == 2147483648)
+		if (res > 2147483648)
 			errormessage();
 	}
 	else if (res > 2147483647)
@@ -61,12 +61,12 @@ int	ft_atol(const char *str)
 	else if (str[i] == '+')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
-		return (0);
+		errormessage();
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = (res * 10) + (str[i++] - '0');
 		if (res < 0)
-				exit (0);
+				errormessage();
 	}
 	check_long(min, res);
 	return ((int)res * min);
