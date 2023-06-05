@@ -6,45 +6,53 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:31:47 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 13:09:55 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:03:52 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void swap(stack* stk, int i, int j)
+void	swap(stack *stk, int i, int j)
 {
-    int temp = stk->items[i];
-    stk->items[i] = stk->items[j];
-    stk->items[j] = temp;
+	int	temp;
+
+	temp = stk->items[i];
+	stk->items[i] = stk->items[j];
+	stk->items[j] = temp;
 }
 
-int partition(stack* stk, int low, int high)
+int	partition(stack *stk, int low, int high)
 {
-    int pivot = stk->items[high];
-    int i = low - 1;
+	int	pivot;
+	int	i;
+	int	j;
 
-    for (int j = low; j <= high - 1; j++)
-    {
-        if (stk->items[j] <= pivot)
-        {
-            i++;
-            swap(stk, i, j);
-        }
-    }
-
-    swap(stk, i + 1, high);
-    return i + 1;
+	j = low;
+	i = low - 1;
+	pivot = stk->items[high];
+	while (j <= high - 1)
+	{
+		if (stk->items[j] <= pivot)
+		{
+			i++;
+			swap(stk, i, j);
+		}
+		j++;
+	}
+	swap(stk, i + 1, high);
+	return (i + 1);
 }
 
-void quicksort_stack(stack* stk, int low, int high)
+void	quicksort_stack(stack *stk, int low, int high)
 {
-    if (low < high)
-    {
-        int pivot = partition(stk, low, high);
-        quicksort_stack(stk, low, pivot - 1);
-        quicksort_stack(stk, pivot + 1, high);
-    }
+	int	pivot;
+
+	if (low < high)
+	{
+		pivot = partition(stk, low, high);
+		quicksort_stack(stk, low, pivot - 1);
+		quicksort_stack(stk, pivot + 1, high);
+	}
 }
 
 void	index_stack(stack *a_stack, stack temp_stack)
