@@ -6,11 +6,11 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/01 10:48:46 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 13:45:25 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define STACK_SIZE 500
+#define STACK_SIZE 501
 
 #include <stdlib.h>
 #include "./libft/libft.h"
