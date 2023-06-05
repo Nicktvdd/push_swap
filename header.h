@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 14:11:37 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:12:50 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_stack
 {
 	int	items[STACK_SIZE];
-	int	top; 
+	int	top;
 	int	bot;
 }	t_stack;
 
