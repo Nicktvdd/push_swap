@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:31:47 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 14:03:52 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:09:07 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void	swap(stack *stk, int i, int j)
+void	swap(t_stack *stk, int i, int j)
 {
 	int	temp;
 
@@ -21,7 +21,7 @@ void	swap(stack *stk, int i, int j)
 	stk->items[j] = temp;
 }
 
-int	partition(stack *stk, int low, int high)
+int	partition(t_stack *stk, int low, int high)
 {
 	int	pivot;
 	int	i;
@@ -43,7 +43,7 @@ int	partition(stack *stk, int low, int high)
 	return (i + 1);
 }
 
-void	quicksort_stack(stack *stk, int low, int high)
+void	quicksort_stack(t_stack *stk, int low, int high)
 {
 	int	pivot;
 
@@ -55,7 +55,7 @@ void	quicksort_stack(stack *stk, int low, int high)
 	}
 }
 
-void	index_stack(stack *a_stack, stack temp_stack)
+void	index_stack(t_stack *a_stack, t_stack temp_stack)
 {
 	int	i;
 	int	j;
@@ -72,9 +72,9 @@ void	index_stack(stack *a_stack, stack temp_stack)
 	}
 }
 
-void	create_index(stack *a_stack)
+void	create_index(t_stack *a_stack)
 {
-	stack	temp_stack;
+	t_stack	temp_stack;
 
 	temp_stack = *a_stack;
 	quicksort_stack(&temp_stack, temp_stack.top, temp_stack.bot);

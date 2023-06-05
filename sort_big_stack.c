@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:22:57 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 13:21:13 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:10:32 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 
 //check when you return to a from b if the next bit is 1 so that it stays in b
-void sort_big_stack(stack* a_stack, stack* b_stack)
+void sort_big_stack(t_stack* a_stack, t_stack* b_stack)
 {
 	int size;
 	int max_num;

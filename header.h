@@ -6,45 +6,50 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:54:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 13:45:25 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:08:51 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define STACK_SIZE 501
+#ifndef HEADER_H
+# define HEADER_H
 
-#include <stdlib.h>
-#include "./libft/libft.h"
+# define STACK_SIZE 501
+
+# include <stdlib.h>
+# include "./libft/libft.h"
 
 typedef struct s_stack
 {
 	int	items[STACK_SIZE];
 	int	top; 
-	int	bot;//instead int size?
-}	stack;
+	int	bot;
+}	t_stack;
 
-void	errormessage();
-void	is_duplicate(stack *a_stack);
+void	errormessage(void);
+void	is_duplicate(t_stack *a_stack);
 int		is_valid_input(int argc, char **argv);
-int		is_sorted(stack *a_stack);
-void 	sa(stack *a_stack);
-void 	sb(stack *b_stack);
-void 	ss(stack *a_stack, stack *b_stack);
-void 	pa(stack *a_stack, stack *b_stack);
-void 	pb(stack *a_stack, stack *b_stack);
-void 	ra(stack *a_stack);
-void 	rb(stack *b_stack);
-void 	rr(stack *a_stack, stack *b_stack);
-void 	rra(stack *a_stack);
-void 	rrb(stack *b_stack);
-void 	rrr(stack *a_stack, stack *b_stack);
-stack	*parse(int argc, char** argv);
-void	sort_big_stack(stack *a_stack, stack *b_stack);
-stack	*sort_small_stack(int argc, stack *a_stack, stack *b_stack);
-void	push(stack *s, int value);
-int		pop(stack *s);
-int		peek(stack *s);
-int		is_empty(stack *s);
-void	print_stack(stack *s);
-void	print_stackb(stack *s);
-stack	*create_stack();
-void	create_index(stack *a_stack);
+int		is_sorted(t_stack *a_stack);
+void	sa(t_stack *a_stack);
+void	sb(t_stack *b_stack);
+void	ss(t_stack *a_stack, t_stack *b_stack);
+void	pa(t_stack *a_stack, t_stack *b_stack);
+void	pb(t_stack *a_stack, t_stack *b_stack);
+void	ra(t_stack *a_stack);
+void	rb(t_stack *b_stack);
+void	rr(t_stack *a_stack, t_stack *b_stack);
+void	rra(t_stack *a_stack);
+void	rrb(t_stack *b_stack);
+void	rrr(t_stack *a_stack, t_stack *b_stack);
+stack	*parse(int argc, char **argv);
+void	sort_big_stack(t_stack *a_stack, t_stack *b_stack);
+stack	*sort_small_stack(int argc, t_stack *a_stack, t_stack *b_stack);
+void	push(t_stack *s, int value);
+int		pop(t_stack *s);
+int		peek(t_stack *s);
+int		is_empty(t_stack *s);
+void	print_stack(t_stack *s);
+void	print_stackb(t_stack *s);
+stack	*create_stack(void);
+void	create_index(t_stack *a_stack);
+
+#endif

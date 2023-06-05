@@ -6,16 +6,16 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 12:50:00 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:10:20 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-stack	*create_stack()
+t_stack	*create_stack()
 {
-	stack	*new_stack;
-	new_stack = (stack*)malloc(sizeof(stack));
+	t_stack	*new_stack;
+	new_stack = (t_stack*)malloc(sizeof(t_stack));
 	if (new_stack == NULL)
 		errormessage();
 	new_stack->top = 0;
@@ -72,7 +72,7 @@ int	ft_atol(const char *str)
 	return ((int)res * min);
 }
 
-stack	*split_args(stack *a_stack, char** argv)
+t_stack	*split_args(t_stack *a_stack, char** argv)
 {
 	int		i;
 	char	**buf;
@@ -91,11 +91,11 @@ stack	*split_args(stack *a_stack, char** argv)
 	return (a_stack);
 }
 
-stack*	parse(int argc, char** argv)
+t_stack	*parse(int argc, char** argv)
 {
 	int		i;
 	int		num;
-	stack 	*a_stack;
+	t_stack 	*a_stack;
 	
 	i = 1;
 	a_stack = create_stack();

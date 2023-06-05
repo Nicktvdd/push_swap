@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:28 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 14:48:09 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:09:21 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-int	is_sorted(stack *a_stack)
+int	is_sorted(t_stack *a_stack)
 {
 	int	i;
 
@@ -64,7 +64,7 @@ int	is_valid_input(int argc, char **argv)
 	return (whitespace + 1);
 }
 
-void	is_duplicate(stack *a_stack)
+void	is_duplicate(t_stack *a_stack)
 {
     int i;
     int j;

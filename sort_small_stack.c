@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:58:11 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/02 15:35:09 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:10:51 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void sort_3(stack* a_stack)
+void sort_3(t_stack* a_stack)
 {
     if (a_stack->items[0] > a_stack->items[1]) // 1st number is smaller
     {
@@ -41,7 +41,7 @@ void sort_3(stack* a_stack)
     }
 }
 
-void	push_smallest(stack *a_stack, stack *b_stack)
+void	push_smallest(t_stack *a_stack, t_stack *b_stack)
 {
 	int	smallest;
 	int	smallest_index;
@@ -68,7 +68,7 @@ void	push_smallest(stack *a_stack, stack *b_stack)
 	pb(a_stack, b_stack);
 }
 
-void sort_5(stack* a_stack, stack* b_stack)
+void sort_5(t_stack* a_stack, t_stack* b_stack)
 {
 	int	i;
 
@@ -81,7 +81,7 @@ void sort_5(stack* a_stack, stack* b_stack)
 			pa(a_stack, b_stack);
 }
 
-stack* sort_small_stack(int size, stack* a_stack, stack* b_stack)
+t_stack* sort_small_stack(int size, t_stack* a_stack, t_stack* b_stack)
 {
 	create_index(a_stack);
 	if (size == 2)

@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:06:08 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/01 10:50:39 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:11:03 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void	push(stack *s, int value)
+void	push(t_stack *s, int value)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ void	push(stack *s, int value)
 	// lowest number and put that into a different variable. now it's bot.
 }
 
-int	pop(stack *s)
+int	pop(t_stack *s)
 {
 	if (s->bot == -1)
 		return (0);
@@ -36,20 +36,20 @@ int	pop(stack *s)
 	return (s->items[s->top]);
 }
 
-int	peek(stack *s)
+int	peek(t_stack *s)
 {
  	if (s->bot == -1)
 		return (0); 
 	return (s->items[s->top]);
 }
 
-int	is_empty(stack *s)
+int	is_empty(t_stack *s)
 {
 	return (s->top == -1);
 }
 
 //debugging purposeses only
-void	print_stack(stack *s)
+void	print_stack(t_stack *s)
 {
 	ft_printf("Stack a: ");
 	for (int i = 0; i <= s->bot; i++) 
@@ -57,7 +57,7 @@ void	print_stack(stack *s)
 	ft_printf("\n");
 }
 
-void	print_stackb(stack *s)
+void	print_stackb(t_stack *s)
 {
 	ft_printf("Stack b: ");
 	for (int i = 0; i <= s->bot; i++) 

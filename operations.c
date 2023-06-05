@@ -6,13 +6,13 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:53:46 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/05/26 15:43:01 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:09:50 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
 
-void	sa(stack *a_stack)
+void	sa(t_stack *a_stack)
 {
 	if (a_stack->bot < 1) 
 		return;
@@ -24,7 +24,7 @@ void	sa(stack *a_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	sb(stack *b_stack)
+void	sb(t_stack *b_stack)
 {
 	if (b_stack->bot < 1) 
 		return;
@@ -36,14 +36,14 @@ void	sb(stack *b_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	ss(stack *a_stack, stack *b_stack)
+void	ss(t_stack *a_stack, t_stack *b_stack)
 {
 	sa(a_stack);
 	sb(b_stack);
 	ft_printf("%s\n", __func__);
 }
 
-void	pa(stack *a_stack, stack *b_stack)
+void	pa(t_stack *a_stack, t_stack *b_stack)
 {
 	int	i;
 	
@@ -59,7 +59,7 @@ void	pa(stack *a_stack, stack *b_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	pb(stack *a_stack, stack *b_stack)
+void	pb(t_stack *a_stack, t_stack *b_stack)
 {
 	int	i;
 	
@@ -75,7 +75,7 @@ void	pb(stack *a_stack, stack *b_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	ra(stack *a_stack)
+void	ra(t_stack *a_stack)
 {
 	if (a_stack->bot < 0) 
 		return;
@@ -93,7 +93,7 @@ void	ra(stack *a_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	rb(stack *b_stack)
+void	rb(t_stack *b_stack)
 {
 	if (b_stack->bot < 0) 
 		return;
@@ -111,14 +111,14 @@ void	rb(stack *b_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	rr(stack *a_stack, stack *b_stack)
+void	rr(t_stack *a_stack, t_stack *b_stack)
 {
 	ra(a_stack);
 	rb(b_stack);
 	ft_printf("%s\n", __func__);
 }
 
-void	rra(stack *a_stack)
+void	rra(t_stack *a_stack)
 {
 	if (a_stack->top < 0)
 		return;
@@ -136,7 +136,7 @@ void	rra(stack *a_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	rrb(stack *b_stack)
+void	rrb(t_stack *b_stack)
 {
 	if (b_stack->top < 0)
 		return;
@@ -154,7 +154,7 @@ void	rrb(stack *b_stack)
 	ft_printf("%s\n", __func__);
 }
 
-void	rrr(stack *a_stack, stack *b_stack)
+void	rrr(t_stack *a_stack, t_stack *b_stack)
 {
 	rra(a_stack);
 	rrb(b_stack);

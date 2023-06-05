@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:53:30 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 13:24:20 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:10:26 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //to locate where they are on the map
 //or we can assign a number to them, to simplify the sorting
 
-void	errormessage()
+void	errormessage(void)
 {
 	write(2, "Error\n", 6);
 	exit(0);
@@ -24,8 +24,8 @@ void	errormessage()
 
 int	main(int argc, char **argv)
 {
-	stack	*a_stack;
-	stack	*b_stack;
+	t_stack	*a_stack;
+	t_stack	*b_stack;
 	int		argnum;
 
 	argnum = is_valid_input(argc, argv);
