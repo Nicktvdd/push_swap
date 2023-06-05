@@ -6,23 +6,11 @@
 /*   By: nvan-den <nvan-den@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:14:00 by nvan-den          #+#    #+#             */
-/*   Updated: 2023/06/05 14:30:55 by nvan-den         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:51:11 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header.h"
-
-t_stack	*create_stack(void)
-{
-	t_stack	*new_stack;
-
-	new_stack = (t_stack *)malloc(sizeof(t_stack));
-	if (new_stack == NULL)
-		errormessage();
-	new_stack->top = 0;
-	new_stack->bot = -1;
-	return (new_stack);
-}
 
 int	ft_overflow(int min)
 {
@@ -64,11 +52,7 @@ int	ft_atol(const char *str)
 	if (str[i] == '+' || str[i] == '-')
 		errormessage();
 	while (str[i] >= '0' && str[i] <= '9')
-	{
 		res = (res * 10) + (str[i++] - '0');
-		if (res < 0)
-			errormessage();
-	}
 	check_long(min, res);
 	return ((int)res * min);
 }
@@ -94,9 +78,9 @@ t_stack	*split_args(t_stack *a_stack, char **argv)
 
 t_stack	*parse(int argc, char **argv)
 {
-	int i;
-	int num;
-	t_stack *a_stack;
+	int		i;
+	int		num;
+	t_stack	*a_stack;
 
 	i = 1;
 	a_stack = create_stack();
@@ -104,7 +88,7 @@ t_stack	*parse(int argc, char **argv)
 		split_args(a_stack, argv);
 	else
 	{
-		while (i < argc) // check here if it is sorted already?
+		while (i < argc)
 		{
 			num = ft_atol(argv[i]);
 			a_stack->items[++a_stack->bot] = num;
